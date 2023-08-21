@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.myapplication.TitleFragment"
+        android:label="toeristische evenementen">
+        <action
+            android:id="@+id/action_titleFragment_to_dateFragment"
+            app:destination="@id/dateFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/dateFragment"
+        android:name="com.example.myapplication.DateFragment"
+        android:label="selecteer datum"
+        tools:layout="@layout/fragment_date">
+        <action
+            android:id="@+id/action_dateFragment_to_toerismeFragment"
+            app:destination="@id/toerismeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/toerismeFragment"
+        android:name="com.example.myapplication.ToerismeFragment"
+        android:label="lijst van activiteiten"
+        tools:layout="@layout/fragment_toerisme" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.myapplication.AboutFragment"
+        android:label="info over"
+        tools:layout="@layout/fragment_about" />
+</navigation>
